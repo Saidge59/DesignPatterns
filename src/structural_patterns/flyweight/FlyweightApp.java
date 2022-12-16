@@ -20,6 +20,7 @@ public class FlyweightApp {
         shapes.add(factoryShape.getShapeByName("point"));
         shapes.add(factoryShape.getShapeByName("circle"));
         shapes.add(factoryShape.getShapeByName("square"));
+        shapes.add(factoryShape.getShapeByName("circle"));
 
         for(Shape shape:shapes) {
             shape.drawShape((int)(Math.random()*10), (int)(Math.random()*10));
