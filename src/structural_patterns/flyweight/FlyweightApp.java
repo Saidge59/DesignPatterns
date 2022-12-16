@@ -22,8 +22,8 @@ public class FlyweightApp {
         shapes.add(factoryShape.getShapeByName("square"));
         shapes.add(factoryShape.getShapeByName("circle"));
 
-        for(Shape shape:shapes) {
-            shape.drawShape((int)(Math.random()*10), (int)(Math.random()*10));
+        for (Shape shape : shapes) {
+            shape.drawShape((int) (Math.random() * 10), (int) (Math.random() * 10));
         }
     }
 }
@@ -31,10 +31,10 @@ public class FlyweightApp {
 class FactoryShape {
     Map<String, Shape> shapes = new HashMap<>();
 
-    Shape getShapeByName (String name) {
+    Shape getShapeByName(String name) {
         Shape shape = shapes.get(name);
 
-        if(shape == null) {
+        if (shape == null) {
             switch (name) {
                 case "point":
                     System.out.println("Create new object Point");
@@ -62,15 +62,26 @@ interface Shape {
 }
 
 class Point implements Shape {
-    @Override public void drawShape(int x, int y) { System.out.println("("+x+", "+y+") shape is point"); }
+    @Override
+    public void drawShape(int x, int y) {
+        System.out.println("(" + x + ", " + y + ") shape is point");
+    }
 }
 
 class Circle implements Shape {
     int r = 5;
-    @Override public void drawShape(int x, int y) { System.out.println("("+x+", "+y+") shape is circle with radius " + r); }
+
+    @Override
+    public void drawShape(int x, int y) {
+        System.out.println("(" + x + ", " + y + ") shape is circle with radius " + r);
+    }
 }
 
 class Square implements Shape {
     int a = 10;
-    @Override public void drawShape(int x, int y) { System.out.println("("+x+", "+y+") shape is square with side " + a); }
+
+    @Override
+    public void drawShape(int x, int y) {
+        System.out.println("(" + x + ", " + y + ") shape is square with side " + a);
+    }
 }
